@@ -48,6 +48,8 @@ install(DIRECTORY ${CMAKE_BINARY_DIR}/package/
         COMPONENT "_cura" # Note: _ prefix is necessary to make sure the Cura component is always listed first
 )
 
+set(CPACK_GENERATOR "NSIS")
+
 if(CPACK_GENERATOR MATCHES "NSIS64" OR CPACK_GENERATOR MATCHES "NSIS")
     # Only NSIS needs to have arduino and vcredist
     install(DIRECTORY ${EXTERNALPROJECT_INSTALL_PREFIX}/arduino

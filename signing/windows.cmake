@@ -5,8 +5,8 @@
 
 find_package(Signtool REQUIRED)
 
-set(WINDOWS_IDENTITIY_PFX_FILE "THE_PFX_FILE_IS_MISSING_HERE!" CACHE STRING "PFX file, which represents the identity of the developer.")
-set(WINDOWS_IDENTITIY_PFX_PASSWORD "" CACHE STRING "Password, which unlocks the PFX file (optional)")
+set(WINDOWS_IDENTITIY_PFX_FILE D:/mycert.pfx CACHE STRING "PFX file, which represents the identity of the developer.")
+set(WINDOWS_IDENTITIY_PFX_PASSWORD "ji3g4go6" CACHE STRING "Password, which unlocks the PFX file (optional)")
 
 set(signtool_OPTIONS /fd SHA256 /a /f ${WINDOWS_IDENTITIY_PFX_FILE})
 
