@@ -22,7 +22,7 @@ option(BUILD_PACKAGE "Create a package with the build of Cura" ON)
 option(SIGN_PACKAGE "Perform signing of the created package. Implies BUILD_PACKAGE" ON)
 
 set(CURA_BUILDTYPE          "" CACHE STRING "Build type of Cura, eg. 'testing'")
-set(CURA_NO_INSTALL_PLUGINS "" CACHE STRING "A list of plugins to exclude from installation, should be separated by ';'.")
+set(CURA_NO_INSTALL_PLUGINS "3MFReader;3MFWriter;AMFReader;CuraDrive;FirmwareUpdateChecker;FirmwareUpdater;MonitorStage;RemovableDriveOutputDevice;UltimakerMachineActions;UM3NetworkPrinting;USBPrinting;X3DReader" CACHE STRING "A list of plugins to exclude from installation, should be separated by ';'.")
 set(CURA_MSI_PRODUCT_GUID   "" CACHE STRING "The Product GUID for Cura MSI")
 set(CURA_MSI_UPGRADE_GUID   "" CACHE STRING "The Upgrade GUID for Cura MSI")
 
@@ -54,8 +54,8 @@ GetFromEnvironmentOrCache(CURAENGINE_ENABLE_MORE_COMPILER_OPTIMIZATION_FLAGS "ON
 GetFromEnvironmentOrCache(EXTRA_REPOSITORIES "" STRING "Extra repositories to install. Expected to have a CMake based build system. Format is (<project name> <git URL> <cmake configuration options>\;)*")
 
 # Create the version-related variables
-GetFromEnvironmentOrCache(CURA_VERSION_MAJOR "0" STRING "Cura Major Version")
-GetFromEnvironmentOrCache(CURA_VERSION_MINOR "0" STRING "Cura Minor Version")
+GetFromEnvironmentOrCache(CURA_VERSION_MAJOR "4" STRING "Cura Major Version")
+GetFromEnvironmentOrCache(CURA_VERSION_MINOR "7" STRING "Cura Minor Version")
 GetFromEnvironmentOrCache(CURA_VERSION_PATCH "0" STRING "Cura Patch Version")
 GetFromEnvironmentOrCache(CURA_VERSION_EXTRA "${TAG_OR_BRANCH}" STRING "Cura Extra Version Information")
 
