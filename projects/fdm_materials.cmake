@@ -1,5 +1,5 @@
 ExternalProject_Add(fdm_materials
-    GIT_REPOSITORY https://github.com/ultimaker/fdm_materials
+    GIT_REPOSITORY https://github.com/RapidiaTechInc/fdm_materials
     GIT_TAG origin/${FDMMATERIALS_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     STEP_TARGETS update
