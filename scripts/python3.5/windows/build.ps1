@@ -1,10 +1,10 @@
 # This script builds a Cura release using the cura-build-environment Windows docker image.
 
 param (
-# Docker parameters
-  [string]$DockerImage = "ultimaker/cura-build-environment:win1809-latest",
+  # Docker parameters
+  [string]$DockerImage = "ultimaker/cura-build-environment:win1809-master",
 
-# Branch parameters
+  # Branch parameters
   [string]$CuraBranchOrTag = "master",
   [string]$UraniumBranchOrTag = "master",
   [string]$CuraEngineBranchOrTag = "master",
@@ -12,34 +12,34 @@ param (
   [string]$FdmMaterialsBranchOrTag = "master",
   [string]$LibCharonBranchOrTag = "master",
 
-# Cura release parameters
-  [Parameter(Mandatory=$true)]
-    [int32]$CuraVersionMajor,
-  [Parameter(Mandatory=$true)]
-    [int32]$CuraVersionMinor,
-  [Parameter(Mandatory=$true)]
-    [int32]$CuraVersionPatch,
+  # Cura release parameters
+  [Parameter(Mandatory = $true)]
+  [int32]$CuraVersionMajor,
+  [Parameter(Mandatory = $true)]
+  [int32]$CuraVersionMinor,
+  [Parameter(Mandatory = $true)]
+  [int32]$CuraVersionPatch,
   [string]$CuraVersionExtra = "",
 
   [string]$CuraBuildType = "",
   [string]$NoInstallPlugins = "",
 
-  [Parameter(Mandatory=$true)]
-    [string]$CloudApiRoot = "https://api.ultimaker.com",
-  [Parameter(Mandatory=$true)]
-    [string]$CloudAccountApiRoot = "https://account.ultimaker.com",
-  [Parameter(Mandatory=$true)]
-    [int32]$CloudApiVersion = 1,
-  [Parameter(Mandatory=$true)]
-    [string]$MarketplaceRoot = "https://marketplace.ultimaker.com",
-  [Parameter(Mandatory=$true)]
-    [string]$DigitalFactoryURL = "https://digitalfactory.ultimaker.com",
+  [Parameter(Mandatory = $true)]
+  [string]$CloudApiRoot = "https://api.ultimaker.com",
+  [Parameter(Mandatory = $true)]
+  [string]$CloudAccountApiRoot = "https://account.ultimaker.com",
+  [Parameter(Mandatory = $true)]
+  [int32]$CloudApiVersion = 1,
+  [Parameter(Mandatory = $true)]
+  [string]$MarketplaceRoot = "https://marketplace.ultimaker.com",
+  [Parameter(Mandatory = $true)]
+  [string]$DigitalFactoryURL = "https://digitalfactory.ultimaker.com",
 
   [boolean]$EnableDebugMode = $true,
   [boolean]$EnableCuraEngineExtraOptimizationFlags = $true,
 
-  [Parameter(Mandatory=$true)]
-    [string]$CuraWindowsInstallerType = "EXE",
+  [Parameter(Mandatory = $true)]
+  [string]$CuraWindowsInstallerType = "EXE",
 
   [string]$CuraMsiProductGuid = "",
   [string]$CuraMsiUpgradeGuid = "",
@@ -123,7 +123,7 @@ if ($BindSshVolume) {
   --env CURA_CLOUD_API_VERSION=$CuraCloudApiVersion `
   --env CURA_CLOUD_ACCOUNT_API_ROOT=$CuraCloudAccountApiRoot `
   --env CURA_MARKETPLACE_ROOT=$MarketplaceRoot `
-  --env CURA_DIGITAL_FACTORY_URL=$DigitalFactoryURL
+  --env CURA_DIGITAL_FACTORY_URL=$DigitalFactoryURL `
   --env CURA_DEBUG_MODE=$CURA_DEBUG_MODE `
   --env CURAENGINE_ENABLE_MORE_COMPILER_OPTIMIZATION_FLAGS=$CURAENGINE_ENABLE_MORE_COMPILER_OPTIMIZATION_FLAGS `
   --env CPACK_GENERATOR=$CPACK_GENERATOR `
