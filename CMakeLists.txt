@@ -54,8 +54,8 @@ GetFromEnvironmentOrCache(CURAENGINE_ENABLE_MORE_COMPILER_OPTIMIZATION_FLAGS "ON
 GetFromEnvironmentOrCache(EXTRA_REPOSITORIES "" STRING "Extra repositories to install. Expected to have a CMake based build system. Format is (<project name> <git URL> <cmake configuration options>\;)*")
 
 # Create the version-related variables
-GetFromEnvironmentOrCache(CURA_VERSION_MAJOR "4" STRING "Cura Major Version")
-GetFromEnvironmentOrCache(CURA_VERSION_MINOR "7" STRING "Cura Minor Version")
+GetFromEnvironmentOrCache(CURA_VERSION_MAJOR "1" STRING "Cura Major Version")
+GetFromEnvironmentOrCache(CURA_VERSION_MINOR "0" STRING "Cura Minor Version")
 GetFromEnvironmentOrCache(CURA_VERSION_PATCH "0" STRING "Cura Patch Version")
 GetFromEnvironmentOrCache(CURA_VERSION_EXTRA "${TAG_OR_BRANCH}" STRING "Cura Extra Version Information")
 
