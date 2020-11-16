@@ -77,14 +77,14 @@ cmake -DCMAKE_BUILD_TYPE=Release ^
       -DCPACK_GENERATOR="%CPACK_GENERATOR%" ^
       -DCURA_MSI_PRODUCT_GUID="%CURA_MSI_PRODUCT_GUID%" ^
       -DCURA_MSI_UPGRADE_GUID="%CURA_MSI_UPGRADE_GUID%" ^
-      -G "NMake Makefiles" ^
+      -G "MinGW Makefiles" ^
       %CURA_BUILD_SRC_PATH%
-nmake
-nmake package
+mingw32-make
+mingw32-make package
 
 rem Copy all build data
 rem robocopy /e %cura_build_work_dir%\src %CURA_BUILD_OUTPUT_PATH%\build
 
 echo Copying the installer to the mounted volume ...
-copy /y "Ultimaker_Cura*.exe" %CURA_BUILD_OUTPUT_PATH%\
-copy /y "Ultimaker_Cura*.msi" %CURA_BUILD_OUTPUT_PATH%\
+copy /y "Rapidia_Cura*.exe" %CURA_BUILD_OUTPUT_PATH%\
+copy /y "Rapidia_Cura*.msi" %CURA_BUILD_OUTPUT_PATH%\

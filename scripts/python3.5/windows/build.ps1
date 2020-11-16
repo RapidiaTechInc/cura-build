@@ -2,7 +2,7 @@
 
 param (
   # Docker parameters
-  [string]$DockerImage = "ultimaker/cura-build-environment:win1809-master",
+  [string]$DockerImage = "edwinchenyj/rapidia-cura:latest",
 
   # Branch parameters
   [string]$CuraBranchOrTag = "master",
@@ -24,21 +24,21 @@ param (
   [string]$CuraBuildType = "",
   [string]$NoInstallPlugins = "",
 
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [string]$CloudApiRoot = "https://api.ultimaker.com",
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [string]$CloudAccountApiRoot = "https://account.ultimaker.com",
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [int32]$CloudApiVersion = 1,
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [string]$MarketplaceRoot = "https://marketplace.ultimaker.com",
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [string]$DigitalFactoryURL = "https://digitalfactory.ultimaker.com",
 
   [boolean]$EnableDebugMode = $true,
   [boolean]$EnableCuraEngineExtraOptimizationFlags = $true,
 
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [string]$CuraWindowsInstallerType = "EXE",
 
   [string]$CuraMsiProductGuid = "",
