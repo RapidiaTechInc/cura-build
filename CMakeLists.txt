@@ -42,13 +42,6 @@ endif()
 
 set(EXTERNALPROJECT_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/inst)
 
-GetFromEnvironmentOrCache(FDMMATERIALS_BRANCH_OR_TAG "master" STRING "The name of the tag or branch to build for fdm_materials")
-GetFromEnvironmentOrCache(CURABINARYDATA_BRANCH_OR_TAG "master" STRING "The name of the tag or branch to build for cura-binary-data")
-GetFromEnvironmentOrCache(CURAENGINE_BRANCH_OR_TAG "master" STRING "The name of the tag or branch to build for CuraEngine")
-GetFromEnvironmentOrCache(URANIUM_BRANCH_OR_TAG "master" STRING "The name of the tag or branch to build for Uranium")
-GetFromEnvironmentOrCache(CURA_BRANCH_OR_TAG "master" STRING "The name of the tag or branch to build for Cura")
-GetFromEnvironmentOrCache(LIBCHARON_BRANCH_OR_TAG "master" STRING "The name of the tag or branch to build for libCharon")
-
 GetFromEnvironmentOrCache(CURAENGINE_ENABLE_MORE_COMPILER_OPTIMIZATION_FLAGS "ON" STRING "Whether to enable extra compiler optimization flags for CuraEngine")
 
 GetFromEnvironmentOrCache(EXTRA_REPOSITORIES "" STRING "Extra repositories to install. Expected to have a CMake based build system. Format is (<project name> <git URL> <cmake configuration options>\;)*")
@@ -109,36 +102,3 @@ endforeach()
 
 ProcessProjectDependencies(TARGET projects)
 
-# Create package step
-if(BUILD_PACKAGE)
-    add_custom_target(packaging ALL DEPENDS projects COMMENT "Packaging Projects...")
-
-    if(BUILD_OS_WINDOWS)
-        include(packaging/windows.cmake)
-    elseif(BUILD_OS_OSX)
-        include(packaging/osx.cmake)
-    elseif(BUILD_OS_LINUX)
-        if(${Python3_VERSION} VERSION_LESS 3.7)
-            include(packaging/linux.cmake)
-        else()
-            include(packaging/python3.7/linux.cmake)
-        endif()
-    else()
-        message(STATUS "Do not know how to build an executable for the current platform! You will have to create it manually.")
-    endif()
-endif()
-
-# Sign packages step
-if(SIGN_PACKAGE)
-    add_custom_target(signing ALL DEPENDS packaging COMMENT "Signing Package...")
-
-    if(BUILD_OS_WINDOWS)
-        include(signing/windows.cmake)
-    elseif(BUILD_OS_OSX)
-        include(signing/osx.cmake)
-    elseif(BUILD_OS_LINUX)
-        include(signing/linux.cmake)
-    else()
-        message(STATUS "Do not know how to sign the executable for the current platform! You will need to perform signing manually.")
-    endif()
-endif()

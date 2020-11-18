@@ -13,11 +13,11 @@ param (
   [string]$LibCharonBranchOrTag = "master",
 
   # Cura release parameters
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [int32]$CuraVersionMajor,
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [int32]$CuraVersionMinor,
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
   [int32]$CuraVersionPatch,
   [string]$CuraVersionExtra = "",
 
