@@ -3,7 +3,6 @@ include(CPackComponent)
 include(packaging/cpackconfig_common.cmake)
 
 # Only include Arduino driver and VC runtime redistribution installer for NSIS
-cpack_add_component(vcredist DISPLAY_NAME "Install Visual Studio 2015 Redistributable")
 
 # ========================================
 # NSIS

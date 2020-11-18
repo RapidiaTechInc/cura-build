@@ -53,11 +53,6 @@ set(CPACK_GENERATOR "NSIS")
 if(CPACK_GENERATOR MATCHES "NSIS64" OR CPACK_GENERATOR MATCHES "NSIS")
     # Only NSIS needs to have arduino and vcredist
     
-    install(FILES ${EXTERNALPROJECT_INSTALL_PREFIX}/vcredist_x64.exe
-            DESTINATION "."
-            COMPONENT "vcredist"
-    )
-
     set(CPACK_NSIS_PACKAGE_ARCHITECTURE "64")
 
     include(packaging/cpackconfig_nsis.cmake)
