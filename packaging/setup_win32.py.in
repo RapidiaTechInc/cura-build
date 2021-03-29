@@ -185,12 +185,12 @@ executables = [
 ]
 
 setup(
-    name = "Rapidia Cura",
+    name = "ExOne Cura",
     version = "@CURA_VERSION_MAJOR@.@CURA_VERSION_MINOR@.@CURA_VERSION_PATCH@",
-    description = "Rapidia Cura",
-    long_description = "Rapidia Cura - 3D Printing Software",
-    author = "Rapidia Tech",
-    url = "http://rapidia.com/",
+    description = "ExOne Cura",
+    long_description = "ExOne Cura - 3D Printing Software",
+    author = "ExOne",
+    url = "http://exone.com/",
     license = "GNU LESSER GENERAL PUBLIC LICENSE (LGPL)",
 
     options = {"build_exe": build_options},
