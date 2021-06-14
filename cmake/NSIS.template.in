@@ -1050,8 +1050,11 @@ Function .onInit
   StrCmp "@CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL@" "ON" 0 inst
   IfSilent inst 0
 
-  !insertmacro uninstallVersion "ExOne Cura 1.0.0" "ExOne Cura 1.0" "R10"
-  !insertmacro uninstallVersion "ExOne Cura 1.1" "ExOne Cura 1.1" "R11"
+  !insertmacro uninstallVersion "ExOne Cura 1.0.0" "ExOne Cura 1.0.0" "R100"
+  !insertmacro uninstallVersion "ExOne Cura 1.0.1" "ExOne Cura 1.0.1" "R101"
+  !insertmacro uninstallVersion "ExOne Cura 1.0.2" "ExOne Cura 1.0.2" "R102"
+  !insertmacro uninstallVersion "ExOne Cura 1.0.3" "ExOne Cura 1.0.3" "R103"
+  !insertmacro uninstallVersion "ExOne Cura 1.0.4" "ExOne Cura 1.0.4" "R104"
   !insertmacro uninstallVersion "ExOne Cura @CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "@CPACK_PACKAGE_INSTALL_REGISTRY_KEY@" "latest"
 
 inst:
