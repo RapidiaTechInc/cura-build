@@ -1057,6 +1057,7 @@ Function .onInit
   !insertmacro uninstallVersion "ExOne Cura 1.0.4" "ExOne Cura 1.0.4" "R104"
   !insertmacro uninstallVersion "ExOne Cura 1.0.5" "ExOne Cura 1.0.5" "R105"
   !insertmacro uninstallVersion "ExOne Cura 1.0.6" "ExOne Cura 1.0.6" "R106"
+  !insertmacro uninstallVersion "ExOne Cura 1.0.7" "ExOne Cura 1.0.7" "R107"
   !insertmacro uninstallVersion "ExOne Cura @CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "@CPACK_PACKAGE_INSTALL_REGISTRY_KEY@" "latest"
 
 inst:
