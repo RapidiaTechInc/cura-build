@@ -44,6 +44,7 @@ endif()
 
 set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/packaging/cura.ico")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Rapidia Cura")
+set(CPACK_PACKAGE_CONTACT "Rapidia Tech <info@rapidia.com>")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/packaging/cura_license.txt")
 
 # Differentiate between a normal Cura installation and that of a different build type

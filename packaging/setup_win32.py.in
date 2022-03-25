@@ -189,7 +189,7 @@ setup(
     version = "@CURA_VERSION_MAJOR@.@CURA_VERSION_MINOR@.@CURA_VERSION_PATCH@",
     description = "Rapidia Cura",
     long_description = "Rapidia Cura - 3D Printing Software",
-    author = "Rapidia",
+    author = "Rapidia Tech",
     url = "http://rapidia.com/",
     license = "GNU LESSER GENERAL PUBLIC LICENSE (LGPL)",
 
