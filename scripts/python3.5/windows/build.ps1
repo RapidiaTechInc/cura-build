@@ -8,7 +8,7 @@ param (
   [string]$CuraBranchOrTag = "master",
   [string]$UraniumBranchOrTag = "master",
   [string]$CuraEngineBranchOrTag = "master",
-  [string]$CuraBinaryDataBranchOrTag = "master",
+  [string]$CuraBinaryDataBranchOrTag = "main",
   [string]$FdmMaterialsBranchOrTag = "master",
   [string]$LibCharonBranchOrTag = "master",
 
