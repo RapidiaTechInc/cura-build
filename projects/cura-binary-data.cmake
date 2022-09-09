@@ -1,5 +1,5 @@
 ExternalProject_Add(cura-binary-data
-    GIT_REPOSITORY https://github.com/ultimaker/cura-binary-data
+    GIT_REPOSITORY https://github.com/RapidiaTechInc/cura-binary-data
     GIT_TAG origin/${CURABINARYDATA_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     STEP_TARGETS update
